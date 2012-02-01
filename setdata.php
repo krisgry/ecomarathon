@@ -7,11 +7,8 @@ $values = $_POST['data'];
 if(isset($_POST['data'])){
 echo $_POST['data'];
 	$values = preg_split("/,/",$values, -1, PREG_SPLIT_NO_EMPTY);
-	$out = "";
 	$current = "NA";
 	$current_n = 0;
-#	$maxdate = mysql_fetch_assoc(mysql_query("SELECT max(time) as time FROM log"));
-#	$save_db = (strtotime("now")-strtotime($maxdate[time]))>10;
 	$save_db = true;
 	$gps = array();
 
@@ -33,7 +30,6 @@ echo $_POST['data'];
 	foreach($values as $v){
 		if($v == "V"){
 			$current = $v;
-			$out .= "cell_voltage = [";
 			$current_n = 0;
 		}else if($v == "S"){
 			$current = $v;
