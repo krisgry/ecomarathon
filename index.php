@@ -127,7 +127,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 					<tr>
 				<?PHP
 					for($i = 0; $i < 23; $i++){
-						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type_id = 0 AND n = ".$i));
+						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 0 AND n = ".$i));
 						echo "<td>".$name[name]."</td>";
 					}
 					echo "</tr><tr>";
@@ -137,7 +137,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 					}
 					echo "</tr><tr>";
 					for($i = 23; $i < 46; $i++){
-						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type_id = 0 AND n = ".$i));
+						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 0 AND n = ".$i));
 						echo "<td>".$name[name]."</td>";
 					}
 					echo "</tr><tr>";
@@ -154,7 +154,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				<table>
 					<tr>
 				<?PHP
-					$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type_id = 1 AND n = 0"));
+					$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 1 AND n = 0"));
 					echo "<td>".$name[name]."</td>";
 					echo "</tr><tr>";
 					echo "<td><a class='submodal-800-520' href=\"stat.php?type=1&n=0\" style=\"text-decoration:  none;cursor: pointer\" id=\"sumcell\"></a></td>";
@@ -168,7 +168,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 					<tr>
 				<?PHP
 					for($i = 0; $i < 12; $i++){
-						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type_id = 2 AND n = ".$i));
+						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 2 AND n = ".$i));
 						echo "<td>".$name[name]."</td>";
 					}
 					echo "</tr><tr>";
@@ -187,7 +187,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 					<tr>
 				<?PHP
 					for($i = 0; $i < 5; $i++){
-						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type_id = 4 AND n = ".$i));
+						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 4 AND n = ".$i));
 						echo "<td>".$name[name]."</td>";
 					}
 					echo "</tr><tr>";
@@ -205,7 +205,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 					<tr>
 				<?PHP
 					for($i = 0; $i < 2; $i++){
-						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type_id = 3 AND n = ".$i));
+						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 3 AND n = ".$i));
 						echo "<td>".$name[name]."</td>";
 					}
 					echo "</tr><tr>";
@@ -306,7 +306,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				$thre = mysql_query("SELECT * FROM type_sensor");
 				$thresholds = array();
 				while($t = mysql_fetch_assoc($thre)){
-					$thresholds[$t[type_id]][$t[n]] = array($t[min],$t[max]);
+					$thresholds[$t[type]][$t[n]] = array($t[min],$t[max]);
 				}
 				$out = "";
 				foreach($thresholds as $o){
