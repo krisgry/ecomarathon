@@ -55,7 +55,6 @@ if(isset($_POST['sensor'])){
 	}
 }
 $config = mysql_query("SELECT * FROM config");
-//mysql_query("INSERT INTO config VALUES('http://org.ntnu.no/eitecov11/values2.php', NULL)");
 $config = mysql_fetch_assoc($config);
 $laps = mysql_query("SELECT * FROM laps");
 ?>

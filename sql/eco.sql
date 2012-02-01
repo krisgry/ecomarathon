@@ -10,6 +10,9 @@ CREATE TABLE config (
 	address_for_data VARCHAR(255)
 ) ENGINE=InnoDB;
 
+-- Code expects one config row to operate on
+INSERT INTO config (time,address_for_data) VALUES (now(),'http://localhost/eco/values2.php');
+
 CREATE TABLE cps (
 	id INT(11) AUTO_INCREMENT PRIMARY KEY,
 	p1la DOUBLE NOT NULL,
