@@ -138,7 +138,7 @@ $laps = mysql_query("SELECT * FROM laps");
 			<table>
 				<tr>
 					<td>Adress:</td>
-					<td><input type="text" name="config[adress_for_data]" value="<?PHP echo $config[adress_for_data];?>"></td>
+					<td><input type="text" name="config[address_for_data]" value="<?PHP echo $config[address_for_data];?>"></td>
 				</tr>
 			</table>
 			<table>

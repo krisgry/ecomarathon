@@ -22,7 +22,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 		<!-- END: stopwatch -->		
 	
 		<!-- BEGIN: prefetch values-->
-			<script language="javascript" type="text/javascript" src="<?PHP echo $_SESSION[config][adress_for_data];?>"></script> 
+			<script language="javascript" type="text/javascript" src="<?PHP echo $_SESSION[config][address_for_data];?>"></script> 
 		<!-- END: prefetch values -->	
 
 		<!--Gauges (Fucker opp jqBarGraph)-->
@@ -182,7 +182,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				updateValues();
 			});
 			function updateValues() {
-				$.getScript('<?PHP echo $_SESSION[config][adress_for_data];?>', function(){updateUI();});
+				$.getScript('<?PHP echo $_SESSION[config][address_for_data];?>', function(){updateUI();});
 			}
 			function updateUI(){
 				avgspeed.needle.setValue(values[0]);

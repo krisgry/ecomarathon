@@ -28,7 +28,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 		<!-- END: stopwatch -->		
 	
 		<!-- BEGIN: prefetch values-->
-			<script type="text/javascript" src="<?PHP echo $_SESSION[config][adress_for_data];?>"></script> 
+			<script type="text/javascript" src="<?PHP echo $_SESSION[config][address_for_data];?>"></script> 
 		<!-- END: prefetch values -->	
 		<!--Gauges (Fucker opp jqBarGraph)-->
 		<script type="text/javascript" src="bindows_gauges.js"></script>
@@ -335,7 +335,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				updateValues();
 			});
 			function updateValues() {
-				$.getScript('<?PHP echo $_SESSION[config][adress_for_data];?>', function(){updateUI();});
+				$.getScript('<?PHP echo $_SESSION[config][address_for_data];?>', function(){updateUI();});
 			}
 			function updateUI(){
 				found = false;
