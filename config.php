@@ -37,19 +37,19 @@
 	<body>
 <?php
 include 'db.php';
-if(isset($_POST[config])){
-	foreach($_POST[config] as $key => $val){
+if(isset($_POST['config'])){
+	foreach($_POST['config'] as $key => $val){
 		mysql_query("UPDATE config SET ".$key." = '".$val."'");
 	}
 }
-if(isset($_POST[laps])){
-	foreach($_POST[laps] as $key => $val){
+if(isset($_POST['laps'])){
+	foreach($_POST['laps'] as $key => $val){
 		mysql_query("UPDATE laps SET planned_time = ".$val." WHERE id = ".$key);
 	}
 }
-if(isset($_POST[sensor])){
-	foreach($_POST[sensor] as $key => $val){
-		foreach($_POST[sensor][$key] as $n => $name){
+if(isset($_POST['sensor'])){
+	foreach($_POST['sensor'] as $key => $val){
+		foreach($_POST['sensor'][$key] as $n => $name){
 			mysql_query("UPDATE type_sensor SET name='".$name[0]."', min =".$name[1].", max=".$name[2]." WHERE n = ".$n." AND type = ".$key);
 		}
 	}
@@ -138,7 +138,7 @@ $laps = mysql_query("SELECT * FROM laps");
 			<table>
 				<tr>
 					<td>Adress:</td>
-					<td><input type="text" name="config[address_for_data]" value="<?PHP echo $config[address_for_data];?>"></td>
+					<td><input type="text" name="config[address_for_data]" value="<?PHP echo $config['address_for_data'];?>"></td>
 				</tr>
 			</table>
 			<table>
