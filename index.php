@@ -1,7 +1,7 @@
 <?PHP 
 include 'login.php';
 include 'db.php';
-$_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
+$_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -28,7 +28,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 		<!-- END: stopwatch -->		
 	
 		<!-- BEGIN: prefetch values-->
-			<script type="text/javascript" src="<?PHP echo $_SESSION[config][address_for_data];?>"></script> 
+			<script type="text/javascript" src="<?PHP echo $_SESSION['config']['address_for_data'];?>"></script> 
 		<!-- END: prefetch values -->	
 		<!--Gauges (Fucker opp jqBarGraph)-->
 		<script type="text/javascript" src="bindows_gauges.js"></script>
@@ -188,7 +188,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				<?PHP
 					for($i = 0; $i < 5; $i++){
 						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 4 AND n = ".$i));
-						echo "<td>".$name[name]."</td>";
+						echo "<td>".$name['name']."</td>";
 					}
 					echo "</tr><tr>";
 					for($i = 0; $i < 5; $i++){
@@ -206,7 +206,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				<?PHP
 					for($i = 0; $i < 2; $i++){
 						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 3 AND n = ".$i));
-						echo "<td>".$name[name]."</td>";
+						echo "<td>".$name['name']."</td>";
 					}
 					echo "</tr><tr>";
 					for($i = 0; $i < 2; $i++){
@@ -286,12 +286,12 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 			var speedg = bindows.loadGaugeIntoDiv("gauge.xml", "speed");
 
 			<?PHP 
-			if ($_SESSION[config][time] != "0000-00-00 00:00:00"){
-				$time = strtotime("now")-strtotime($_SESSION[config][time]);
+			if ($_SESSION['config'][time] != "0000-00-00 00:00:00"){
+				$time = strtotime("now")-strtotime($_SESSION['config'][time]);
 				echo "var sec = ".($time%60).";";
 				echo "var min = ".(floor($time/60)%60).";";
 				echo "var hour = ".floor($time/3600).";";
-				if($_SESSION[config][time_status] == 1){
+				if($_SESSION['config']['time_status'] == 1){
 					echo "stopwatch(\"Start\");";
 				}
 			}else{	
@@ -335,7 +335,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				updateValues();
 			});
 			function updateValues() {
-				$.getScript('<?PHP echo $_SESSION[config][address_for_data];?>', function(){updateUI();});
+				$.getScript('<?PHP echo $_SESSION['config']['address_for_data'];?>', function(){updateUI();});
 			}
 			function updateUI(){
 				found = false;
