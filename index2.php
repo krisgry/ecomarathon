@@ -1,4 +1,6 @@
-<?PHP include 'db.php';
+<?PHP
+include 'db.php';
+include 'common.php';
 $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -42,7 +44,9 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
     		function initialize() {
 			if (GBrowserIsCompatible()) {
 				map = new GMap2(document.getElementById("map_canvas"));
-				map.setCenter(new GLatLng(51.5322, 13.9298), 15);
+				<?PHP
+				echo 'map.setCenter(new GLatLng('. $track_latitude . ','. $track_longitude . '), 15);'
+				?>
 				map.setMapType(G_SATELLITE_MAP);
 				map.setUIToDefault();
 
