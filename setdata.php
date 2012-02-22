@@ -68,7 +68,7 @@ echo $_POST['data'];
 
 
 	$cp = mysql_fetch_assoc(mysql_query("SELECT r.id as rid, r.*, c.* FROM realcps r JOIN cps c ON c.id = r.cp_id WHERE visited = 0 ORDER BY r.id ASC LIMIT 1"));
-	$last_cp = mysql_query("SELECT * FROM realcps r JOIN cps c ON c.id = r.cp_id WHERE r.visited = 1 AND r.id < ".$cp[rid]." AND c.finish = 1 ORDER BY r.id DESC LIMIT 1");
+	$last_cp = mysql_query("SELECT * FROM realcps r JOIN cps c ON c.id = r.cp_id WHERE r.visited = 1 AND r.id < ".$cp['rid']." AND c.finish = 1 ORDER BY r.id DESC LIMIT 1");
 	if($last_cp){
 		$last_cp = mysql_fetch_assoc($last_cp);
 	}

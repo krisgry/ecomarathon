@@ -311,7 +311,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				$thre = mysql_query("SELECT * FROM type_sensor");
 				$thresholds = array();
 				while($t = mysql_fetch_assoc($thre)){
-					$thresholds[$t[type]][$t[n]] = array($t[min],$t[max]);
+					$thresholds[$t[type]][$t['n']] = array($t['min'],$t['max']);
 				}
 				$out = "";
 				foreach($thresholds as $o){
