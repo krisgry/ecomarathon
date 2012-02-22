@@ -1,0 +1,6 @@
+<?PHP
+$track_latitude = 51.5322;
+$track_longitude = 13.9298;
+
+include('config.incl.local');
+?>

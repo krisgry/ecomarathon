@@ -1,7 +1,7 @@
 <?PHP 
+include 'config.incl';
 include 'login.php';
 include 'db.php';
-include 'common.php';
 $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
