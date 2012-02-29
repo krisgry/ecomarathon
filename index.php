@@ -133,7 +133,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				<?PHP
 					for($i = 0; $i < 23; $i++){
 						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 0 AND n = ".$i));
-						echo "<td>".$name[name]."</td>";
+						echo "<td>".$name['name']."</td>";
 					}
 					echo "</tr><tr>";
 					for($i = 0; $i < 23; $i++){
@@ -142,7 +142,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 					echo "</tr><tr>";
 					for($i = 23; $i < 46; $i++){
 						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 0 AND n = ".$i));
-						echo "<td>".$name[name]."</td>";
+						echo "<td>".$name['name']."</td>";
 					}
 					echo "</tr><tr>";
 					for($i = 23; $i < 46; $i++){
@@ -158,7 +158,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 					<tr>
 				<?PHP
 					$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 1 AND n = 0"));
-					echo "<td>".$name[name]."</td>";
+					echo "<td>".$name['name']."</td>";
 					echo "</tr><tr>";
 					echo "<td><a class='submodal-800-520' href=\"stat.php?type=1&n=0\" style=\"text-decoration:  none;cursor: pointer\" id=\"sumcell\"></a></td>";
 				?>
@@ -172,7 +172,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				<?PHP
 					for($i = 0; $i < 12; $i++){
 						$name = mysql_fetch_assoc(mysql_query("SELECT name FROM type_sensor WHERE type = 2 AND n = ".$i));
-						echo "<td>".$name[name]."</td>";
+						echo "<td>".$name['name']."</td>";
 					}
 					echo "</tr><tr>";
 					for($i = 0; $i < 12; $i++){
@@ -227,15 +227,15 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 								$totalplanned = 0;
 								$totaltime = 0;
 							while($lap = mysql_fetch_assoc($times)){
-								$totalplanned += $lap[planned_time];
-								$totaltime += $lap[time];
+								$totalplanned += $lap['planned_time'];
+								$totaltime += $lap['time'];
 								echo "<tr>";
-								echo "<td>".$lap[id]."</td>";
-								echo "<td id=\"lap".$lap[id]."\">".(($lap[time] != "")?floor($lap[time]/60).":".str_pad($lap[time]%60, 2, "0", STR_PAD_LEFT):"")."</td>";
-								echo "<td>".floor($lap[planned_time]/60).":".str_pad($lap[planned_time]%60, 2, "0", STR_PAD_LEFT)."</td>";
-								$diff = $lap[time]-$lap[planned_time];
-								echo "<td id=\"lapdiff".$lap[id]."\">".(($lap[time] != "")?(($diff < 0)?"-":"+").floor(abs($diff)/60).":".str_pad(abs($diff)%60, 2, "0", STR_PAD_LEFT):"")."</td>";
-								echo "<td id=\"avglap".$lap[id]."\">".(($lap[time] != 0)?round((3173/$lap[time])*3.6, 2)." km/h":"")."</td>";
+								echo "<td>".$lap['id']."</td>";
+								echo "<td id=\"lap".$lap['id']."\">".(($lap['time'] != "")?floor($lap['time']/60).":".str_pad($lap['time']%60, 2, "0", STR_PAD_LEFT):"")."</td>";
+								echo "<td>".floor($lap['planned_time']/60).":".str_pad($lap['planned_time']%60, 2, "0", STR_PAD_LEFT)."</td>";
+								$diff = $lap['time']-$lap['planned_time'];
+								echo "<td id=\"lapdiff".$lap['id']."\">".(($lap['time'] != "")?(($diff < 0)?"-":"+").floor(abs($diff)/60).":".str_pad(abs($diff)%60, 2, "0", STR_PAD_LEFT):"")."</td>";
+								echo "<td id=\"avglap".$lap['id']."\">".(($lap['time'] != 0)?round((3173/$lap['time'])*3.6, 2)." km/h":"")."</td>";
 								echo "</tr>";
 							}
 							?>
@@ -286,8 +286,8 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 			var speedg = bindows.loadGaugeIntoDiv("gauge.xml", "speed");
 
 			<?PHP 
-			if ($_SESSION['config'][time] != "0000-00-00 00:00:00"){
-				$time = strtotime("now")-strtotime($_SESSION['config'][time]);
+			if ($_SESSION['config']['time'] != "0000-00-00 00:00:00"){
+				$time = strtotime("now")-strtotime($_SESSION['config']['time']);
 				echo "var sec = ".($time%60).";";
 				echo "var min = ".(floor($time/60)%60).";";
 				echo "var hour = ".floor($time/3600).";";
