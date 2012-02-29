@@ -2,7 +2,7 @@
 exit;
 include "db.php";
 session_start();
-$values = fgets(fopen("http://81.167.78.33/eco/values.php", "r"));
+$values = fgets(fopen("<?PHP echo $site_prefix;?>/values.php", "r"));
 $gps = fopen("http://org.ntnu.no/eitecov11/out.txt", "r");
 $gpsarray = array();
 

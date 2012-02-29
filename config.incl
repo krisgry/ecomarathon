@@ -2,5 +2,7 @@
 $track_latitude = 51.5322;
 $track_longitude = 13.9298;
 
+$site_prefix = 'http://localhost/eco/';
+
 include('config.incl.local');
 ?>
