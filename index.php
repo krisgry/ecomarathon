@@ -12,7 +12,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
     	<title>DNV Fuel Fighter 2.0</title>
 		<!-- Use Compatibility mode in IE -->
 		<!--[if IE]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]--> 
-		  
+		 <!-- testkommentar -->
 		<!--<link rel="stylesheet" type="text/css" href="jquery.jqplot.css" /> -->
 		<link rel="stylesheet" type="text/css" href="style.css" />	
 		<link rel="stylesheet" type="text/css" href="popup.css" />	
