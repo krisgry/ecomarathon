@@ -12,7 +12,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
     	<title>DNV Fuel Fighter 2.0</title>
 		<!-- Use Compatibility mode in IE -->
 		<!--[if IE]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]--> 
-		 <!-- testkommentar -->
+
 		<!--<link rel="stylesheet" type="text/css" href="jquery.jqplot.css" /> -->
 		<link rel="stylesheet" type="text/css" href="style.css" />	
 		<link rel="stylesheet" type="text/css" href="popup.css" />	
@@ -27,7 +27,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 		<!-- BEGIN: stopwatch -->
 			<script type="text/javascript" src="stopwatch.js"></script> 
 		<!-- END: stopwatch -->		
-	
+
 		<!-- BEGIN: prefetch values-->
 			<script type="text/javascript" src="<?PHP echo $_SESSION['config']['address_for_data'];?>"></script> 
 		<!-- END: prefetch values -->	
@@ -283,7 +283,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 			var speed = 0.0;
 			var visibleChart = 0;
 			var visibleCount = 0;
-			var speedg = bindows.loadGaugeIntoDiv("gauge.xml", "speed");
+			//<!-- var speedg = bindows.loadGaugeIntoDiv("gauge.xml", "speed"); -->
 
 			<?PHP 
 			if ($_SESSION['config']['time'] != "0000-00-00 00:00:00"){
@@ -412,8 +412,8 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 					$("#sumcellvoltbut").css("background-color", "red");
 				}
 				setCarPos(pos[index][0], pos[index][1]);
-				speedg.needle.setValue(speed);
-				speedg.label.setText(speed);
+				//speedg.needle.setValue(speed);
+				//speedg.label.setText(speed);
 				//$("#speed").text(speed);
 				setTimeout(updateValues, 2000);
 			}
