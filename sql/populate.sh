@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo '
 INSERT INTO type (id,name,unit,n_sensors) VALUES (1,"Cell","V",46);
