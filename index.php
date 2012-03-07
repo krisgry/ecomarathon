@@ -55,7 +55,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 		</script>
 
 		<!--Google maps-->    		
-		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAYaog4dzwxoybW9_peuyRMBTmxJAMRai9ImD_LhpYkYI0uOtUXhRElJmT8ZyykJlgkzQYdkGDSVAUgg" type="text/javascript"></script>
+		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyB6i1TDsf0RiuCKZ3Wxis1bjip0DEQltFE" type="text/javascript"></script>
 	    <script type="text/javascript">
 		var map;
 		var baseIcon;
