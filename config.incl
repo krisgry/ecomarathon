@@ -1,4 +1,8 @@
 <?PHP
+
+$db_user = 'eco';
+$db_passwd = 'ecomarathon';
+
 $track_latitude = 51.5322;
 $track_longitude = 13.9298;
 
