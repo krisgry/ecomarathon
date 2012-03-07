@@ -2,6 +2,7 @@
 
 $db_user = 'eco';
 $db_host = 'localhost:3307';
+$db_name = 'eco';
 $db_passwd = 'ecomarathon';
 
 $track_latitude = 51.5322;
