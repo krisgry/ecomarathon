@@ -1,2 +1,3 @@
+config.incl.local
 tmp/
 sql/populate.sql
