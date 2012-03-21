@@ -17,14 +17,14 @@
 		<link rel="stylesheet" type="text/css" href="style.css" />	
 
 		<!-- BEGIN: load jquery --> 
-			<script type="text/javascript" src="jquery-1.4.2.min.js"></script> 
+			<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script> 
 		<!-- END: load jquery --> 
-			<script type="text/javascript" src="clock.js"></script>
+			<script type="text/javascript" src="js/clock.js"></script>
 		<!-- BEGIN: prefetch values-->
-			<script type="text/javascript" src="getBloggData.php"></script> 
+			<script type="text/javascript" src="js/getBloggData.php"></script> 
 		<!-- END: prefetch values -->	
 		<!--Gauges (Fucker opp jqBarGraph)-->
-		<script type="text/javascript" src="bindows_gauges.js"></script>
+		<script type="text/javascript" src="js/bindows_gauges.js"></script>
 	
 		<!-- BEGIN: highcharts -->
 <!--			<script language="javascript" type="text/javascript" src="highcharts.js"></script>-->

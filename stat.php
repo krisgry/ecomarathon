@@ -32,11 +32,11 @@ mysql_close($conn);
 <html>
 	<head>
 		<!-- BEGIN: load jquery --> 
-			<script language="javascript" type="text/javascript" src="jquery-1.4.2.min.js"></script> 
+			<script language="javascript" type="text/javascript" src="js/jquery-1.4.2.min.js"></script> 
 		<!-- END: load jquery --> 
 
 		<!-- BEGIN: highcharts -->
-			<script language="javascript" type="text/javascript" src="highcharts.js"></script>
+			<script language="javascript" type="text/javascript" src="js/highcharts.js"></script>
 		<!-- END: highcharts -->
 		<script type="text/javascript">
 			$(document).ready(

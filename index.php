@@ -13,29 +13,28 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 		<!-- Use Compatibility mode in IE -->
 		<!--[if IE]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]--> 
 
-		<!--<link rel="stylesheet" type="text/css" href="jquery.jqplot.css" /> -->
-		<link rel="stylesheet" type="text/css" href="style.css" />	
-		<link rel="stylesheet" type="text/css" href="popup.css" />	
+		<link rel="stylesheet" type="text/css" href="style/style.css" />
+		<link rel="stylesheet" type="text/css" href="style/popup.css" />
 
-		<script type="text/javascript" src="common.js"></script> 
-		<script type="text/javascript" src="popup.js"></script>
+		<script type="text/javascript" src="js/common.js"></script> 
+		<script type="text/javascript" src="js/popup.js"></script>
 
 		<!-- BEGIN: load jquery --> 
-			<script type="text/javascript" src="jquery-1.4.2.min.js"></script> 
+			<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script> 
 		<!-- END: load jquery --> 
 
 		<!-- BEGIN: stopwatch -->
-			<script type="text/javascript" src="stopwatch.js"></script> 
+			<script type="text/javascript" src="js/stopwatch.js"></script> 
 		<!-- END: stopwatch -->		
 
 		<!-- BEGIN: prefetch values-->
 			<script type="text/javascript" src="<?PHP echo $_SESSION['config']['address_for_data'];?>"></script> 
 		<!-- END: prefetch values -->	
 		<!--Gauges (Fucker opp jqBarGraph)-->
-		<script type="text/javascript" src="bindows_gauges.js"></script>
+		<script type="text/javascript" src="js/bindows_gauges.js"></script>
 	
 		<!-- BEGIN: highcharts -->
-<!--			<script language="javascript" type="text/javascript" src="highcharts.js"></script>-->
+<!--			<script language="javascript" type="text/javascript" src="js/highcharts.js"></script>-->
 		<!-- END: highcharts -->
 	<script type="text/javascript">
 		function toggleLayer( whichLayer ) {
@@ -82,7 +81,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 				baseIcon.infoWindowAnchor = new GPoint(9, 2);
 					
 				icon = new GIcon(baseIcon);
-				icon.image = "ff-logo-small.png";
+				icon.image = "img/ff-logo-small.png";
 			}
 		}
 		function setCarPos(latitude, longitude){
@@ -121,7 +120,6 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 			<a href="config.php" class='submodal-800-520' >Config</a>
 			<center>
 			<div id="header"></div>
-		<!--	<table><tr><td><img src="DNV.jpg" height="100px"></td><td><h1>Shell Eco Marathon 2011</h1></td><td><img src="shell.jpg" height="100px"></td></tr></table>-->
 				<form name="clock"><input type="text" name="stwa" value="00 : 00 : 00"><input type="button" name="theButton" onClick="stopwatchButton(this.value);" value="Start"><input type="button" onClick="stopwatchButton(this.value);reset();" value="Reset"></form>
 			</center>
 			<hr>
@@ -283,7 +281,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 			var speed = 0.0;
 			var visibleChart = 0;
 			var visibleCount = 0;
-			//<!-- var speedg = bindows.loadGaugeIntoDiv("gauge.xml", "speed"); -->
+			var speedg = bindows.loadGaugeIntoDiv("gauge.xml", "speed");
 
 			<?PHP 
 			if ($_SESSION['config']['time'] != "0000-00-00 00:00:00"){

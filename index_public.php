@@ -11,23 +11,23 @@
     	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     	<title>DNV Fuel Fighter 2.0</title>
 		<!-- Use Compatibility mode in IE -->
-		<!--[if IE]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]--> 
+		<!--[if IE]><script language="javascript" type="text/javascript" src="js/excanvas.js"></script><![endif]--> 
 		  
 		<!--<link rel="stylesheet" type="text/css" href="jquery.jqplot.css" /> -->
-		<link rel="stylesheet" type="text/css" href="style.css" />	
+		<link rel="stylesheet" type="text/css" href="style/style.css" />
 
 		<!-- BEGIN: load jquery --> 
-			<script type="text/javascript" src="jquery-1.4.2.min.js"></script> 
+			<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script> 
 		<!-- END: load jquery --> 
-			<script type="text/javascript" src="clock.js"></script>
+			<script type="text/javascript" src="js/clock.js"></script>
 		<!-- BEGIN: prefetch values-->
-			<script type="text/javascript" src="getPublicData.php"></script> 
+			<script type="text/javascript" src="js/getPublicData.php"></script> 
 		<!-- END: prefetch values -->	
 		<!--Gauges (Fucker opp jqBarGraph)-->
-		<script type="text/javascript" src="bindows_gauges.js"></script>
+		<script type="text/javascript" src="js/bindows_gauges.js"></script>
 	
 		<!-- BEGIN: highcharts -->
-<!--			<script language="javascript" type="text/javascript" src="highcharts.js"></script>-->
+<!--			<script language="javascript" type="text/javascript" src="js/highcharts.js"></script>-->
 		<!-- END: highcharts -->
 	<script type="text/javascript">
 		function toggleLayer( whichLayer ) {
@@ -74,7 +74,7 @@
 				baseIcon.infoWindowAnchor = new GPoint(9, 2);
 					
 				icon = new GIcon(baseIcon);
-				icon.image = "ff-logo-small.png";
+				icon.image = "img/ff-logo-small.png";
 			}
 		}
 		function setCarPos(latitude, longitude){
@@ -113,7 +113,6 @@
 			<center>
 			<div id="header"></div>
 			<div id="clock">00 : 00 : 00</div>
-		<!--	<table><tr><td><img src="DNV.jpg" height="100px"></td><td><h1>Shell Eco Marathon 2011</h1></td><td><img src="shell.jpg" height="100px"></td></tr></table>-->
 			</center>
 			<hr>
 			<div id="content">

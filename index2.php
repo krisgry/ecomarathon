@@ -12,15 +12,14 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 		<!-- Use Compatibility mode in IE -->
 		<!--[if IE]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]--> 
 		  
-		<!--<link rel="stylesheet" type="text/css" href="jquery.jqplot.css" /> -->
-		<link rel="stylesheet" type="text/css" href="style.css" />	
+		<link rel="stylesheet" type="text/css" href="style/style.css" />	
 		
 		<!-- BEGIN: load jquery --> 
-			<script language="javascript" type="text/javascript" src="jquery-1.4.2.js"></script> 
+			<script language="javascript" type="text/javascript" src="js/jquery-1.4.2.js"></script> 
 		<!-- END: load jquery --> 
 
 		<!-- BEGIN: stopwatch -->
-			<script language="javascript" type="text/javascript" src="stopwatch.js"></script> 
+			<script language="javascript" type="text/javascript" src="js/stopwatch.js"></script> 
 		<!-- END: stopwatch -->		
 	
 		<!-- BEGIN: prefetch values-->
@@ -28,10 +27,10 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 		<!-- END: prefetch values -->	
 
 		<!--Gauges (Fucker opp jqBarGraph)-->
-		<script type="text/javascript" src="bindows_gauges.js"></script>
+		<script type="text/javascript" src="js/bindows_gauges.js"></script>
 
 		<!-- BEGIN: highcharts -->
-			<script language="javascript" type="text/javascript" src="highcharts.js"></script>
+			<script language="javascript" type="text/javascript" src="js/highcharts.js"></script>
 		<!-- END: highcharts -->
 
 		<!--Google maps-->    		
@@ -88,7 +87,7 @@ $_SESSION[config] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 	<body onload="initialize()" onunload="GUnload()">
 		<div style="width:1000px;center;  margin-left: auto ;margin-right: auto ;">
 			<div style="text-align:center;">
-				<img src="DNV.jpg" height="100px"><h1>Shell Eco Marathon 2011</h1>
+				<img src="img/DNV.jpg" height="100px"><h1>Shell Eco Marathon 2011</h1>
 			</div>
 			<hr>
 			<div id="content">
