@@ -38,21 +38,20 @@ CREATE TABLE laps (
 	planned_time INT(11)
 ) ENGINE=InnoDB;
 
-CREATE TABLE type (
+CREATE TABLE sensor_type (
 	id INT(11) AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(255),
 	unit VARCHAR(10),
-	n_sensors INT(11)
 ) ENGINE=InnoDB;
 
-CREATE TABLE type_sensor (
+CREATE TABLE sensor (
 	id INT(11) AUTO_INCREMENT PRIMARY KEY,
-	type INT(11) NOT NULL,
+	sensor_type INT(11) NOT NULL,
 	n INT(11),
 	name VARCHAR(255),
 	min DOUBLE,
 	max DOUBLE,
-	FOREIGN KEY (type) REFERENCES type(id)
+	FOREIGN KEY (sensor_type) REFERENCES sensor_type(id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE log (
