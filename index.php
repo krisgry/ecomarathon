@@ -32,7 +32,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 		<!-- END: prefetch values -->	
 		<!--Gauges (Fucker opp jqBarGraph)-->
 		<script type="text/javascript" src="js/bindows_gauges.js"></script>
-	
+
 		<!-- BEGIN: highcharts -->
 <!--			<script language="javascript" type="text/javascript" src="js/highcharts.js"></script>-->
 		<!-- END: highcharts -->
@@ -55,7 +55,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 
 		<!--Google maps-->    		
 		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyB6i1TDsf0RiuCKZ3Wxis1bjip0DEQltFE" type="text/javascript"></script>
-	    <script type="text/javascript">
+	  <script type="text/javascript">
 		var map;
 		var baseIcon;
 		var marker;
