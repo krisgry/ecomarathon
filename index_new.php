@@ -52,12 +52,16 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">Fuelfigther</a>
-          <form name="clock" class="pull-left"><input class="input-small" type="text" name="stwa" value="00 : 00 : 00"><input class="btn" type="button" name="theButton" onClick="stopwatchButton(this.value);" value="Start"><input class="btn" type="button" onClick="stopwatchButton(this.value);reset();" value="Reset"></form>
+          <form name="clock" class="pull-left">
+	    <input class="input-small" style="margin-top: 5px;" type="text" name="stwa" value="00 : 00 : 00">
+            <input class="btn" type="button" name="theButton" onClick="stopwatchButton(this.value);" value="Start">
+            <input class="btn" type="button" onClick="stopwatchButton(this.value);reset();" value="Reset">
+          </form>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#sensors">Sensors</a></li>
               <li><a href="#speed_header">Speed</a></li>
-              <li><a id="config_btn" href="#">Config</a>
+              <li><a id="config_btn" href="#">Configuration</a>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -75,11 +79,11 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-        <!--Google maps-->
-        <div id="map_canvas" style="padding: 50px; width: 480px; height: 400px;"></div>
-        <?PHP
-          include('maps.php');
-        ?>
+      <!--Google maps-->
+      <div id="map_canvas" style="padding-top: 50px; width: 480px; height: 400px;"></div>
+      <?PHP
+        include('maps.php');
+      ?>
 
       <!-- Example row of columns -->
       <div class="row">
