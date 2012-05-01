@@ -8,7 +8,7 @@ $_SESSION['config'] = mysql_fetch_assoc(mysql_query('SELECT * FROM config'));
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>DNV Fuelfigther, powered by Twitter Bootsrap</title>
+    <title>DNV Fuelfighter, powered by Twitter Bootsrap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
